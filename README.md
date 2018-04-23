@@ -25,15 +25,19 @@
 |__ routes.js
 |__ server.js
 ```
-### Try it out !
-```
-git clone  https://github.com/vraulsan/boilerplate-express-botkit-mongoose
-cd boilerplate-express-botkit-mongoose && npm install
-```
 
 ### Considerations
 Make sure you edit the `.env` file with your variables, including the ngrok URL.
 Mongoose is looking for the database in the default MongoDB `/data/db` directory.
+
+### Try it out !
+```
+git clone  https://github.com/vraulsan/boilerplate-express-botkit-mongoose
+cd boilerplate-express-botkit-mongoose && npm install
+node app.js
+```
+
+### Demo
 
 ![demo](https://i.imgur.com/KJ0Z1gi.gif)
 
