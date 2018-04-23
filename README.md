@@ -1,4 +1,6 @@
 ## Express Botkit Mongoose Application Boilerplate
+Simple boilerplate for building express/botkit/mongoose applications.
+Express server and routes are separated and organized to allow quick API development while integrating botkit's logic.
 
 ### File structure
 ```
@@ -34,6 +36,7 @@ Mongoose is looking for the database in the default MongoDB `/data/db` directory
 ```
 git clone  https://github.com/vraulsan/boilerplate-express-botkit-mongoose
 cd boilerplate-express-botkit-mongoose && npm install
+# edit .env with your variables
 node app.js
 ```
 
