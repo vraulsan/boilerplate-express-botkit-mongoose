@@ -29,14 +29,16 @@ Express server and routes are separated and organized to allow quick API develop
 ```
 
 ### Considerations
-- Make sure you edit the `.env` file with your variables, including the ngrok URL.
-- Mongoose is looking for the database in the default MongoDB `/data/db` directory.
+- Make sure you edit the `.env` file with your variables, including the ngrok URL for the spark webhook.
+- You can use a local mongo database or cloud hosted like [mlab](https://mlab.com) or [mongodb](https://mongodb.com)
 
 ### Try it out !
 ```
 git clone  https://github.com/vraulsan/boilerplate-express-botkit-mongoose
 cd boilerplate-express-botkit-mongoose && npm install
-** edit .env with your variables **
+```
+Edit `.env` with your variables
+```
 node app.js
 ```
 
