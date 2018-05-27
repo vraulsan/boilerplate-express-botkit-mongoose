@@ -10,13 +10,16 @@ env(__dirname + '/.env');
 var Botkit = require('botkit');
 var mongoose = require('mongoose');
 
-
+if (!(process.env.NGROK || process.env.URL)) {
+  console.log('You need to pass an NGROK or publicly accessible URL, terminating app...');
+  process.exit(1)
+}
 // initialize spark botkit controller as sparkController
 // I will export this, then import it in the routes definition
 var sparkController = Botkit.sparkbot({
   log: true,
   public_address: process.env.NGROK+'/spark-api',
-  ciscospark_access_token: process.env.SPARK_TOKEN,
+  ciscospark_access_token: process.env.SPARK_TOKEN || '',
   webhook_name: process.env.WEBHOOK_NAME
 });
 
@@ -36,7 +39,7 @@ require('./helpers/spark').checkSparkWebhooks(sparkController)
 
 
 // start the server
-require('./server').createServer(process.env.EXPRESS_PORT);
+require('./server').createServer(3000);
 
 
 // load the sparkbot skills
@@ -45,12 +48,12 @@ require("fs").readdirSync('./controllers/spark').forEach(file => {
 });
 
 // connect to mongoose
-mongoose.connect(process.env.MONGO_URL, err => {
+mongoose.connect('node-boilerplate:27017/boilerplate', err => {
   if (err) {
     console.log('*** Unable to connect with mongoose: ***\n\n' + err);
     process.exit(1);
   }
-  console.log('Mongoose is now connected to ' + process.env.MONGO_URL)
+  console.log('Mongoose is now connected')
 });
 
 

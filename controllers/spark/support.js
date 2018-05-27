@@ -88,7 +88,7 @@ module.exports = function (controller) {
 }
 
 // define prompt questions
-var firstQuestion = "Do you want me to generate a ticket for you?\n\nSay **yes** or **no**"
+var firstQuestion = "Do you want me to generate a support ticket for you?\n\nSay **yes** or **no**"
 
 var secondQuestion = "Excellent, now give me a color.\n\n" +
 "You can say something like **blue** **red** **yellow**."

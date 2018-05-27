@@ -1,0 +1,22 @@
+version: "3"
+
+services:
+
+  node-boilerplate:
+    build: .
+    ports:
+      - "3000:3000"
+    deploy:
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+        max_attempts: 3
+        window: 120s
+  
+  mongo-boilerplate:
+    image: mongo
+    volumes:
+      - ./dbdata:/data/db
+    ports:
+      - "27017:27017"
+

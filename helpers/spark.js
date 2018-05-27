@@ -51,6 +51,7 @@ function checkSparkWebhooks (controller) {
             }).then(function(res, err) {
                 if (err) {
                     console.log('*** There was an error updating the spark webhook ***\n\n', err);
+                    process.exit(1);
                 };
                 console.log('Spark webhook has been updated !');
             })
@@ -64,6 +65,7 @@ function checkSparkWebhooks (controller) {
             }).then(function(res, err) {
                 if (err) {
                     console.log ('*** There was an error creating the spark webhook ***\n\n', err);
+                    process.exit(1);
                 }
                 console.log('Spark webhook has been created !');
             });
